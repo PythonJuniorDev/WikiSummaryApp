@@ -5,22 +5,21 @@ This project is a simple C# console application that fetches a summary of a user
 
 
 ## 📚 Key Concepts Learned
-Async Programming:
-
+Async Programming
 async and await keywords were used to make non-blocking HTTP requests. At first, I didn’t understand why async is necessary. I thought the app could just wait for the response and continue. However, after diving into async programming, I realized that it allows the app to remain responsive during API calls, which is crucial for efficiency in real-world applications.
 
 
-## HTTP Requests with HttpClient:
+## HTTP Requests with HttpClient
 
 I learned how to send an HTTP GET request using HttpClient to fetch data from Wikipedia's API. Initially, I wasn't sure why I needed HttpClient instead of simply using HttpWebRequest. But after researching, I found that HttpClient is the more modern and efficient tool for handling HTTP requests in .NET.
 
 
-## JSON Parsing:
+## JSON Parsing
 
 The JsonDocument class in .NET is used to parse JSON responses from the Wikipedia API. I was unfamiliar with the JsonDocument class at first, so I tried using Newtonsoft.Json. But JsonDocument turned out to be part of .NET’s native API and is more memory-efficient when handling large JSON objects. I learned how to access nested values by using rootElement.GetProperty("key").
 
 
-## Error Handling:
+## Error Handling
 
 I added error handling with try-catch blocks to handle potential issues like network failures or invalid JSON responses. Before this, I didn’t consider handling every error that could occur during the HTTP request and response phases. After encountering some errors during testing, I realized it’s crucial to anticipate and handle exceptions.
 
@@ -30,14 +29,14 @@ I added error handling with try-catch blocks to handle potential issues like net
 ## Misconception 1
 "I thought I could use HttpClient synchronously and simply call .GetAsync() without needing to mark the method as async."
 
-Resolution
+## Resolution
 I learned that calling GetAsync() inside an async method is necessary to avoid blocking the thread. This is because async methods allow the program to run other tasks while waiting for the HTTP request to complete.
 
 
 ## Misconception 2
 "I thought parsing JSON in C# would be as simple as JsonConvert.DeserializeObject(), but it’s more nuanced."
 
-Resolution
+## Resolution
 I discovered JsonDocument works better for accessing specific values from large JSON objects. The JsonDocument class does not require deserialization, which is more efficient when working with structured data like the one returned by Wikipedia’s API.
 
 
@@ -84,7 +83,9 @@ Example:
 
 string htmlContent = $"<html><head><title>{title}</title></head><body><h1>{title}</h1><p>{summary}</p></body></html>";
 File.WriteAllText(filePath, htmlContent);
-Handling Exceptions:
+
+
+## Handling Exceptions
 
 I added try-catch blocks to handle potential network issues, invalid JSON, or other unforeseen exceptions.
 
