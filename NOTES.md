@@ -26,8 +26,8 @@ This project is a simple C# console application that:
 ### HTTP Requests with `HttpClient`
 
 - I used `HttpClient` to send a GET request to the Wikipedia API.
-- I explored why `HttpClient` is preferred over `HttpWebRequest` — it’s modern, simpler, and better for async.
-- HttpClient, all the lower-level work like creating the request, handling the response stream, and reading from it is abstracted away. 
+- I explored why `HttpClient` is preferred over `HttpWebRequest` — it’s modern, simpler, and better for async. 
+- When using HttpClient, all the lower-level work—like creating the request, handling the response stream, and reading from it—is abstracted away
 - It wraps all those details under the hood and makes your code much cleaner, especially with async/await
 
 ### JSON Parsing with `JsonDocument`
@@ -42,9 +42,9 @@ This project is a simple C# console application that:
 ### Error Handling
 
 - I added `try-catch` blocks to handle:
-  - Network issues
-  - JSON parsing errors
-  - Unexpected exceptions
+  - Network issues (e.g. DNS errors, connection failures, non-success HTTP status codes)
+  - JSON parsing errors (like malformed JSON or missing fields)
+  - Unexpected exceptions (e.g. NullReferenceException (when you try to use an uninitialized object), file I/O issues (e.g., file not found, access denied))
 
 ---
 
@@ -76,9 +76,9 @@ This project is a simple C# console application that:
 
 ### 💡 Path Handling
 
-> I didn’t understand why I needed `Path.Combine()`.
+> I didn’t know why I should use `Path.Combine()`.
 
-- `Path.Combine()` handles platform-specific separators (`/` vs `\`) — essential for cross-platform apps.
+- `Path.Combine()` handles platform-specific separators (`/` vs `\`) — essential for cross-platform apps (instead of adding hardcoding separators)
 
 ### 💡 Opening Files
 

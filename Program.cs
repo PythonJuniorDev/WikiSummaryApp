@@ -107,11 +107,22 @@ class Program
 
             await File.WriteAllTextAsync(rawHtmlPath, rawHtml);
             Console.WriteLine($"Raw JSON saved to: {rawHtmlPath}");
-        } // client is automatically cleaned up
+        } // HttpClient is disposed automatically at the end of the using block
+
         catch (HttpRequestException e)
         {
             // Show an error message if the web request fails
             Console.WriteLine("Error fetching data: " + e.Message );
+        }
+         // Catches JSON parsing issues (e.g., missing fields, malformed JSON)
+        catch (JsonException e)
+        {
+            Console.WriteLine($"JSON error: {e.Message}");
+        }
+        // Catches any other unexpected exceptions
+        catch (Exception e)
+        {
+            Console.WriteLine($"Unexpected error: {e.Message}");
         }
     }
 

@@ -47,7 +47,7 @@ These are saved in an `output/` folder. Only the summary file is opened automati
 
 ## 👨‍💻 Learning Focus
 
-- Some areas I deep-dived into:
+  Some areas I deep-dived into:
 - Asynchronous programming with async/await
 - The using statement — especially for HttpClient and resource cleanup (e.g., sockets, file handles)
 - Why JsonDocument.Parse() returns a disposable type
