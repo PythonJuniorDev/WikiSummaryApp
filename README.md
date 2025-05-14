@@ -39,7 +39,7 @@ I used **AI tools (like ChatGPT)** and **online documentation** to help me under
 The app creates two files:
 
 - A summary HTML page with title, description, and optional image (✅ opens automatically)
-- A raw JSON view, formatted safely inside a <pre> tag (saved only)
+- A raw JSON view, formatted safely inside a `<pre>` tag (saved only)
 
 These are saved in an `output/` folder. Only the summary file is opened automatically in the default browser.
 
