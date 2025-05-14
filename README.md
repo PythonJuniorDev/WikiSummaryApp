@@ -119,8 +119,8 @@ This code reflects how I learn:
 
 ## 💡 Future Ideas
 
-- Add language selection (fetch summaries in different languages).
-- Cache results locally.
+- Add language selection (fetch summaries in different languages)
+- Cache results locally
 
 ---
 
