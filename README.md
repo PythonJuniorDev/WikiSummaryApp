@@ -89,7 +89,7 @@ This code reflects how I learn:
 
 I documented every step and question I asked, and my understanding of the answers.
 
-You can read a summary of key insights in [`NOTES.md`](./NOTES.md), or view the full step-by-step in [`chat-log.md`](./chat-log.md) *(optional)*
+You can read a summary of key insights in [`NOTES.md`](./NOTES.md).
 
 ---
 
