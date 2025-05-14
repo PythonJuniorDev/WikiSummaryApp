@@ -21,16 +21,23 @@ This project is a simple C# console application that:
 - `async` and `await` were used to make non-blocking HTTP requests.
 - I initially thought the app could just wait for the response.
 - I learned that async allows the app to remain responsive and efficient, especially in real-world scenarios.
+- **Without** async/await, the UI freezes until the web request is complete — the user can’t move the window, click anything else, or cancel.
 
 ### HTTP Requests with `HttpClient`
 
 - I used `HttpClient` to send a GET request to the Wikipedia API.
 - I explored why `HttpClient` is preferred over `HttpWebRequest` — it’s modern, simpler, and better for async.
+- HttpClient, all the lower-level work like creating the request, handling the response stream, and reading from it is abstracted away. 
+- It wraps all those details under the hood and makes your code much cleaner, especially with async/await
 
 ### JSON Parsing with `JsonDocument`
 
-- I initially tried `Newtonsoft.Json`, but found `JsonDocument` is built into .NET and more memory-efficient.
-- I used `.RootElement.GetProperty("key")` to extract values.
+- I learned how to safely access data in a JSON response using JsonDocument, part of .NET's built-in System.Text.Json namespace.
+- Instead of deserializing the entire JSON into C# objects, I accessed only the data I needed directly from the JSON structure.
+- This avoids full deserialization and gives me more control when handling structured API data.
+- It also reduces unnecessary memory use — you're only storing what you actually need.
+- I used .RootElement.GetProperty("key") and TryGetProperty() to reduce the chance of errors if fields are missing or the structure changes.
+- The top-level JSON object typically includes two key fields: "title" and "extract", which — in the case of the WikiSummaryApp — contain the article’s title and summary.
 
 ### Error Handling
 
@@ -56,11 +63,12 @@ This project is a simple C# console application that:
 
 ### ❌ Misconception 2
 
-> “Parsing JSON should be as simple as `JsonConvert.DeserializeObject()`.”
+> “I thought JSON parsing in .NET would be fully automatic and straightforward.”
 
 ### ✅ Resolution
 
-- `JsonDocument` doesn't require full deserialization and is better for reading specific properties in large JSON objects.
+- I learned that while .NET provides tools like JsonDocument, safely accessing properties often requires checking whether fields exist (e.g., using TryGetProperty()), especially when working with dynamic or unpredictable API responses.
+- This gives more control but also means I need to write more precise and defensive code — checking if a field exists before reading it — to prevent runtime errors.
 
 ---
 
@@ -85,22 +93,28 @@ This project is a simple C# console application that:
 ### Making Async HTTP Calls
 
 ```csharp
+
+Sending the HTTP request
+
 using (HttpClient client = new HttpClient())
 {
     HttpResponseMessage response = await client.GetAsync(requestUri);
     response.EnsureSuccessStatusCode();
     string jsonResponse = await response.Content.ReadAsStringAsync();
 }
+
 Parsing JSON
 
 using (JsonDocument doc = JsonDocument.Parse(jsonResponse))
 {
     string summary = doc.RootElement.GetProperty("extract").GetString();
 }
+
 HTML File Creation
 
 string htmlContent = $"<html><head><title>{title}</title></head><body><h1>{title}</h1><p>{summary}</p></body></html>";
 File.WriteAllText(filePath, htmlContent);
+
 Handling Exceptions
 
 try
@@ -108,9 +122,9 @@ try
     var response = await client.GetAsync(requestUri);
     response.EnsureSuccessStatusCode();
 }
-catch (HttpRequestException ex)
+catch (HttpRequestException e)
 {
-    Console.WriteLine($"Request failed: {ex.Message}");
+    Console.WriteLine($"Request failed: {e.Message}");
 }
 ```
 ---
@@ -119,3 +133,4 @@ catch (HttpRequestException ex)
 - Improve Error Handling: Add more specific messages and custom exceptions.
 - Implement Caching: Save previous requests to avoid repeated API calls.
 - Convert to GUI: Use Windows Forms or WPF for a better user interface.
+(WPF = Windows Presentation Foundation: UI framework by Microsoft used to build rich desktop applications on Windows.)
