@@ -17,7 +17,17 @@ WikiSummaryApp
 ## 📌 Why I Built This
 
 Built as a personal learning project with deep analysis of every step: understanding exactly how every line works.
+I deliberately worked on concepts that felt outside my comfort zone: an opportunity to strengthen my weak spots by diving into the unknown.
 I used ChatGPT not just to generate code, but to **challenge myself to understand every decision**, line by line.
+
+---
+
+## 🧠 How I Worked With ChatGPT
+
+I documented every step and question I asked, and my understanding of the answers.
+I use ChatGPT as a tool. I don't blindly accept what is presented to me — staying critical keeps me sharp.
+
+You can read a summary of key insights in [`NOTES.md`](./NOTES.md).
 
 ---
 
@@ -85,14 +95,6 @@ This code reflects how I learn:
 
 ---
 
-## 🧠 How I Worked With ChatGPT
-
-I documented every step and question I asked, and my understanding of the answers.
-
-You can read a summary of key insights in [`NOTES.md`](./NOTES.md).
-
----
-
 ## 🛠️ Tech Stack
 
 - C# 9 / .NET 6
@@ -129,9 +131,4 @@ git clone https://github.com/PythonJuniorDev/WikiSummaryApp.git
 cd WikiSummaryApp
 dotnet build
 dotnet run
-
-More precise if needed:
-1. Open the solution in Visual Studio or your preferred C# IDE.
-2. Run the app.
-3. Enter a topic (e.g., `Cats`).
-4. The app will generate two files (html and json) inside an `/output` folder and open them in your browser
+```
