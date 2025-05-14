@@ -1,7 +1,5 @@
 # 📄 NOTES.md – Detailed Understanding
 
-
-
 ## 🚀 Project Overview
 
 This project is a simple C# console application that:
@@ -14,9 +12,7 @@ This project is a simple C# console application that:
   - A `.json` file with the raw response.
 - Opens the HTML file in the default browser.
 
-
 ---
-
 
 ## 📚 Key Concepts Learned
 
@@ -43,9 +39,7 @@ This project is a simple C# console application that:
   - JSON parsing errors
   - Unexpected exceptions
 
-
 ---
-
 
 ## ❌ Misconceptions & ✅ Resolutions
 
@@ -58,9 +52,7 @@ This project is a simple C# console application that:
 - You must use `await` in an `async` method to avoid blocking the thread.
 - Async allows the program to handle other tasks while waiting for I/O.
 
-
 ---
-
 
 ### ❌ Misconception 2
 
@@ -70,28 +62,23 @@ This project is a simple C# console application that:
 
 - `JsonDocument` doesn't require full deserialization and is better for reading specific properties in large JSON objects.
 
-
 ---
-
 
 ## 📝 Reflections on Challenges
 
-### 🧩 Path Handling
+### 💡 Path Handling
 
 > I didn’t understand why I needed `Path.Combine()`.
 
 - `Path.Combine()` handles platform-specific separators (`/` vs `\`) — essential for cross-platform apps.
 
-
-### 🧩 Opening Files
+### 💡 Opening Files
 
 > I didn’t know why `UseShellExecute = true` was necessary.
 
 - It tells the system to open the file with the default application (e.g., browser for `.html`).
 
-
 ---
-
 
 ## 🔧 Key Code Insights
 
@@ -105,23 +92,17 @@ using (HttpClient client = new HttpClient())
     string jsonResponse = await response.Content.ReadAsStringAsync();
 }
 Parsing JSON
-csharp
-Copy
-Edit
+
 using (JsonDocument doc = JsonDocument.Parse(jsonResponse))
 {
     string summary = doc.RootElement.GetProperty("extract").GetString();
 }
 HTML File Creation
-csharp
-Copy
-Edit
+
 string htmlContent = $"<html><head><title>{title}</title></head><body><h1>{title}</h1><p>{summary}</p></body></html>";
 File.WriteAllText(filePath, htmlContent);
 Handling Exceptions
-csharp
-Copy
-Edit
+
 try
 {
     var response = await client.GetAsync(requestUri);
@@ -132,9 +113,7 @@ catch (HttpRequestException ex)
     Console.WriteLine($"Request failed: {ex.Message}");
 }
 ```
-
 ---
-
 
 ## 🔄 Things I Want to Explore Next
 - Improve Error Handling: Add more specific messages and custom exceptions.
