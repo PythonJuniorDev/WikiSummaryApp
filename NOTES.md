@@ -133,4 +133,4 @@ catch (HttpRequestException e)
 - Improve Error Handling: Add more specific messages and custom exceptions.
 - Implement Caching: Save previous requests to avoid repeated API calls.
 - Convert to GUI: Use Windows Forms or WPF for a better user interface.
-(WPF = Windows Presentation Foundation: UI framework by Microsoft used to build rich desktop applications on Windows.)
+- *(WPF = Windows Presentation Foundation: UI framework by Microsoft used to build rich desktop applications on Windows.)*
