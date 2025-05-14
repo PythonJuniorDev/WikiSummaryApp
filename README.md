@@ -24,8 +24,8 @@ I used ChatGPT not just to generate code, but to **challenge myself to understan
 
 ## 🧠 How I Worked With ChatGPT
 
-I documented every step and question I asked, and my understanding of the answers.
 I use ChatGPT as a tool. I don't blindly accept what is presented to me — staying critical keeps me sharp.
+I documented every step and question I asked, and my understanding of the answers.
 
 You can read a summary of key insights in [`NOTES.md`](./NOTES.md).
 
