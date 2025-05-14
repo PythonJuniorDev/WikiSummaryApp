@@ -1,6 +1,7 @@
 # 📄 NOTES.md – Detailed Understanding
 
 
+
 ## 🚀 Project Overview
 
 This project is a simple C# console application that:
@@ -12,6 +13,7 @@ This project is a simple C# console application that:
   - A styled HTML file with a summary.
   - A `.json` file with the raw response.
 - Opens the HTML file in the default browser.
+
 
 ---
 
@@ -41,6 +43,7 @@ This project is a simple C# console application that:
   - JSON parsing errors
   - Unexpected exceptions
 
+
 ---
 
 
@@ -55,6 +58,7 @@ This project is a simple C# console application that:
 - You must use `await` in an `async` method to avoid blocking the thread.
 - Async allows the program to handle other tasks while waiting for I/O.
 
+
 ---
 
 
@@ -65,6 +69,7 @@ This project is a simple C# console application that:
 ### ✅ Resolution
 
 - `JsonDocument` doesn't require full deserialization and is better for reading specific properties in large JSON objects.
+
 
 ---
 
@@ -83,6 +88,7 @@ This project is a simple C# console application that:
 > I didn’t know why `UseShellExecute = true` was necessary.
 
 - It tells the system to open the file with the default application (e.g., browser for `.html`).
+
 
 ---
 
@@ -125,6 +131,9 @@ catch (HttpRequestException ex)
 {
     Console.WriteLine($"Request failed: {ex.Message}");
 }
+```
+
+---
 
 
 🔄 Things I Want to Explore Next
