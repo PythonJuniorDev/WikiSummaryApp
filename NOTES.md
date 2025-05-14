@@ -136,9 +136,7 @@ catch (HttpRequestException ex)
 ---
 
 
-🔄 Things I Want to Explore Next
-Improve Error Handling: Add more specific messages and custom exceptions.
-
-Implement Caching: Save previous requests to avoid repeated API calls.
-
-Convert to GUI: Use Windows Forms or WPF for a better user interface.
+## 🔄 Things I Want to Explore Next
+- Improve Error Handling: Add more specific messages and custom exceptions.
+- Implement Caching: Save previous requests to avoid repeated API calls.
+- Convert to GUI: Use Windows Forms or WPF for a better user interface.
