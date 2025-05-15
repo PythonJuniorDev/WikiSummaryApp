@@ -17,8 +17,8 @@ WikiSummaryApp
 ## 📌 Why I Built This
 
 Built as a personal learning project with deep analysis of every step: understanding exactly how every line works.
-I deliberately worked on concepts that felt outside my comfort zone: an opportunity to strengthen my weak spots by diving into the unknown.
-I used ChatGPT not just to generate code, but to **challenge myself to understand every decision**, line by line.
+I deliberately worked on concepts that felt outside my comfort zone: an opportunity to strengthen my weak spots by diving into the unknown. 
+I was looking to explore code that could help me build something beyond my current skills. I used ChatGPT not just to generate code, but to **challenge myself to understand every decision**, line by line.
 
 ---
 
